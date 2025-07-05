@@ -8,7 +8,7 @@ Edge case:
 1. element not present
 2. 1 element
 
-Time Complexity: O(2logp) = O(logp)
+Time Complexity: O(2logp) = O(logp) where p is the position of the target
 Space Complexity: O(1)
 """
 
@@ -20,7 +20,7 @@ class Solution:
       # O(logp)
       while reader.get(high) < target: # Find the search boundaries using exponential search
         low = high
-        high = high * 2
+        high = high * 2 # You double the size of the search range. You cut the number of steps needed in half, compared to walking linearly.
       
       # O(logp)
       while low <= high: # Binary Search on the boundaries
